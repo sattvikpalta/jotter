@@ -1,5 +1,11 @@
 const btnAdd = document.getElementById('btnAdd');
 
+const notes = JSON.parse(localStorage.getItem('notes'));
+
+if (notes) {
+  notes.forEach(note => addNewNote(note));
+}
+
 btnAdd.addEventListener('click', () => addNewNote());
 
 function addNewNote(text = '') {
@@ -19,8 +25,13 @@ function addNewNote(text = '') {
   const main = note.querySelector('.main');
   const textArea = note.querySelector('textarea');
 
+  textArea.value = text;
+  main.innerHTML = marked(text);
+
   btnDelete.addEventListener('click', () => {
     note.remove();
+
+    updateLocalStorage();
   });
 
   btnEdit.addEventListener('click', () => {
@@ -34,7 +45,21 @@ function addNewNote(text = '') {
     } = e.target;
 
     main.innerHTML = marked(value);
+
+    updateLocalStorage();
   });
 
   document.body.appendChild(note);
 };
+
+// Add notes to local storage
+function updateLocalStorage() {
+  const notesText = document.querySelectorAll('textarea');
+
+  const notes = [];
+
+  notesText.forEach(note => notes.push(note.value));
+
+  localStorage.setItem('notes', JSON.stringify(notes));
+
+}
