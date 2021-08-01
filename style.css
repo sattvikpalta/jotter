@@ -28,8 +28,8 @@ body {
 .note {
   background-color: #fff;
   box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
-  height: 260px;
-  width: 420px;
+  height: 240px;
+  width: 300px;
   margin-top: 40px;
   margin-left: 40px;
 }
@@ -55,8 +55,8 @@ body {
   font-family: inherit;
   font-size: 1rem;
   border: none;
-  height: 220px;
-  width: 380px;
+  height: 200px;
+  width: 260px;
   padding: 20px;
 }
 
