@@ -8,4 +8,4 @@ This is a note taking CRUD application built using JavaScript
 - Update a note using the edit icon
 - Save all notes to the browser's local storage
 
-The application is live on: https://sattvikpalta.github.io/jotter/
+The application is live on: https://sttvk.github.io/jotter/
